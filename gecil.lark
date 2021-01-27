@@ -1,0 +1,29 @@
+?start: function_definition
+
+variable: type variable_name
+variable_name: CNAME
+type: CNAME
+
+function_definition: variable "(" variable? ("," variable)* ")" basic_block
+
+basic_block: "{" statement* "}"
+
+statement: function_call
+         | return_statement
+         | comment
+function_call: CNAME "(" parameters? ")" ";"
+parameters: parameter ("," parameter)*
+return_statement: "return" parameter ";"
+comment: "//" COMMENT
+
+parameter: variable_name
+         | ESCAPED_STRING
+         | NUMBER
+
+COMMENT: /.+/
+
+%import common.NUMBER
+%import common.ESCAPED_STRING
+%import common.CNAME
+%import common.WS
+%ignore WS
