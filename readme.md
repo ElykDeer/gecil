@@ -31,6 +31,15 @@ To run this:
  3. Open `output.bndb` in BinaryNinja and look at the main function
  4. Say "oohh" and "aahh"
 
+or
+
+ 1. Put this folder into your user plugins folder
+ 2. Open the example binary in Binary Ninja
+ 3. Copy the source for the main function from `example.c`
+ 4. Right Click->Plugins->Annotate Binary From Source
+ 5. Paste source, hit "ok"
+ 6. Say "oohh" and "aahh"
+
 ---
 
 File list:
@@ -42,7 +51,3 @@ File list:
  - example.c - The file used for the test matching algo
  - example - compiled with `gcc example.c -o example`
  - requirements.txt - you need to have `lark-parser` installed to run this demo/POC
-
----
-
-

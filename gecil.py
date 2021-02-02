@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 
+import os
 from lark import Lark, Visitor, Token
-import hlil
-
+if __name__ == "gecil.gecil":
+  from gecil import hlil
+else:
+  import hlil
 
 class SourceToHLILVisitor(Visitor):
 
@@ -55,7 +58,8 @@ class SourceToHLILVisitor(Visitor):
 
 
 def gecil(source):
-  with open("gecil.lark", "r") as f:
+
+  with open(os.path.dirname(os.path.realpath(__file__)) + "/gecil.lark", "r") as f:
     parser = Lark(f.read())
 
   source_tree = parser.parse(source)

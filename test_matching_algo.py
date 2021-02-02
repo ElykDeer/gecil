@@ -72,6 +72,3 @@ for geil in good_enough_hlil_func.instructions:
 print("Saving BNDB...")
 bv.create_database("output.bndb")
 print("done.")
-
-# my binja crashes on close, which may just be the result of my dev work atm
-print("\n\n\n\n")
